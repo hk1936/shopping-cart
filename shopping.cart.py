@@ -26,11 +26,35 @@
 #-------------------------------
 #Thanks for your business! Please come again.
 
-ids = []
+
+#### CLASS##########
+#product_id = input("Please input a valid identifier:")
+#print ("The product identifier is:" + str (product_id))
+
+
+
+##below is professor's
+#product_ids = []
+#while True:
+#    product_id = input("Please input a valid product identifier:")
+#    if product_id == "DONE":
+#        print("THANKS ALL DONE HERE")
+#        break
+#    else:
+#        print("THE PRODUCT IDENTIFIER IS: " + str(product_id))
+#        product_ids.append(product_id)
+
+#print("OUTSIDE THE LOOP")
+#print(product_ids)
+
+
+### Project which I did is below...
+product_ids = []
 while True:
-    n = input("Please input a product identifier, or 'DONE' if there are no more items:")
-    ids.append(n)
-    if n.strip() == 'DONE':
+    product_id = input("Please input a product identifier, or 'DONE' if there are no more items:")
+    if product_id.strip() == 'DONE':
         break
-ids.remove("DONE")
-print ("SHOPPING CART INCLUDES FOLLOWING IDENTIFIERS:"+str(ids))
+    else:
+        product_ids.append(int(product_id))
+
+print("SHOPPING CART ITEM IDENTIFIERS INCLUDE:"+ str(product_ids))
