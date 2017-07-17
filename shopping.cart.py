@@ -63,7 +63,7 @@ print("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", str(product_ids))
 def lookup_product_by_id(product_id):
     matching_products = [product for product in products if product["id"] == product_id]
     # using list comprehension, creating list without creating empyt list
-    return matching_products[0] # because the line above gives us a list and we want to return a single item.
+    return matching_products[0] # because the line above gives a list and we want to return a single item.
 
 
 # PRINT RECEIPT
@@ -81,7 +81,7 @@ print("Shopping Cart Items:")
 total = 0
 for product_id in product_ids:
     product = lookup_product_by_id(product_id)
-    total += product["price"] #running_total = running_total + product["price"]
+    total += product["price"] #total = total + product["price"]
     price_usd = ' (${0:.2f})'.format(product["price"])
     print(" + " + product["name"] + price_usd)
     #print product name, price, and calculate running_total (total price adding each price in product ID)
