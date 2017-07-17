@@ -51,6 +51,10 @@ while True:
     product_id = input("Please input a product identifier, or 'DONE' if there are no more items:")
     if product_id.strip() == 'DONE':
         break
+    elif (int(product_id) > 20):
+        print ("Choose between 1 to 20. Try again")
+    elif (int(product_id)==0):
+            print ("Choose between 1 to 20. Try again")
     else:
         product_ids.append(int(product_id))
 
@@ -68,26 +72,26 @@ print("-------------------------------")
 print("Hajime's GROCERY STORE")
 print("-------------------------------")
 print("Web: www.hajimegrocerystore.com")
-print("Phone: 1.123.456.7890")
+print("Phone: 212-123-4567")
 print("Checkout Time: ", datetime.datetime.now().strftime("%Y-%m-%d %H:%m:%S"))
 
 print("-------------------------------")
 print("Shopping Cart Items:")
 
-running_total = 0
+total = 0
 for product_id in product_ids:
     product = lookup_product_by_id(product_id)
-    running_total += product["price"] #running_total = running_total + product["price"]
+    total += product["price"] #running_total = running_total + product["price"]
     price_usd = ' (${0:.2f})'.format(product["price"])
     print(" + " + product["name"] + price_usd)
     #print product name, price, and calculate running_total (total price adding each price in product ID)
 
 print("-------------------------------")
-print("Subtotal:", '${0:.2f}'.format(running_total))
-tax = running_total * 0.08875
+print("Subtotal:", '${0:.2f}'.format(total))
+tax = total * 0.08875
 print("Plus NYC Sales Tax (8.875%):", '${0:.2f}'.format(tax))
-total = running_total + tax
-print("Total:", '${0:.2f}'.format(total))
+total2 = total + tax
+print("Total:", '${0:.2f}'.format(total2))
 
 print("-------------------------------")
 print("Thanks for your business! Please come again.")
